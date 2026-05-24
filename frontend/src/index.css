@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    background-color: #0a0c0f;
+    color: #f0f4ff;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar       { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0a0c0f; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,255,136,0.2); border-radius: 4px; }
+}
+
+@layer components {
+
+  .nav-link {
+    @apply w-full text-left flex items-center gap-2.5 px-3 py-2.5 rounded-lg
+           text-sm text-text-secondary font-body transition-all duration-200
+           hover:bg-[rgba(0,255,136,0.06)] hover:text-text-primary;
+  }
+  .nav-link.active {
+    @apply bg-[rgba(0,255,136,0.1)] text-text-primary border-l-2 border-accent-green;
+  }
+
+
+  .stat-card {
+    @apply bg-bg-card border border-[rgba(255,255,255,0.06)] rounded-2xl p-6
+           transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover;
+  }
+
+
+  .btn-primary {
+    @apply bg-accent-green text-bg-primary font-display font-semibold text-sm
+           px-5 py-2.5 rounded-lg cursor-pointer transition-all duration-200
+           hover:bg-accent-green-dim hover:shadow-glow-green-sm border-0;
+  }
+  .btn-ghost {
+    @apply bg-transparent text-text-secondary text-sm font-body
+           border border-[rgba(255,255,255,0.08)] px-5 py-2.5 rounded-lg
+           cursor-pointer transition-all duration-200
+           hover:border-[rgba(255,255,255,0.18)] hover:text-text-primary;
+  }
+  .btn-danger {
+    @apply bg-[rgba(255,77,106,0.1)] text-accent-red text-xs font-body
+           border border-[rgba(255,77,106,0.2)] px-3 py-1.5 rounded-md
+           cursor-pointer transition-all duration-200
+           hover:bg-[rgba(255,77,106,0.2)];
+  }
+  .btn-blue {
+    @apply bg-[rgba(77,159,255,0.1)] text-accent-blue text-sm font-body
+           border border-[rgba(77,159,255,0.2)] px-3.5 py-2 rounded-lg
+           cursor-pointer transition-all duration-200
+           hover:bg-[rgba(77,159,255,0.18)];
+  }
+
+
+  .input-field {
+    @apply w-full bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)]
+           text-text-primary rounded-lg px-3.5 py-2.5 text-sm font-body
+           placeholder-text-muted transition-all duration-200 outline-none
+           focus:border-[rgba(0,255,136,0.4)] focus:shadow-[0_0_0_2px_rgba(0,255,136,0.06)];
+  }
+  .input-label {
+    @apply block text-xs font-medium text-text-secondary uppercase tracking-[0.8px] mb-2;
+  }
+
+
+  .badge-open {
+    @apply text-[11px] px-2.5 py-1 rounded-md font-mono
+           bg-[rgba(0,255,136,0.1)] text-accent-green border border-[rgba(0,255,136,0.2)];
+  }
+  .badge-closed {
+    @apply text-[11px] px-2.5 py-1 rounded-md font-mono
+           bg-[rgba(255,77,106,0.1)] text-accent-red border border-[rgba(255,77,106,0.2)];
+  }
+
+
+  .progress-track {
+    @apply h-1.5 rounded-full bg-[rgba(255,255,255,0.05)] overflow-hidden;
+  }
+  .progress-fill-green  { @apply h-full rounded-full bg-gradient-to-r from-accent-green to-accent-green-dim; }
+  .progress-fill-blue   { @apply h-full rounded-full bg-gradient-to-r from-accent-blue to-[#3580d8]; }
+  .progress-fill-orange { @apply h-full rounded-full bg-gradient-to-r from-accent-orange to-[#e67530]; }
+  .progress-fill-purple { @apply h-full rounded-full bg-gradient-to-r from-accent-purple to-[#7a3fd8]; }
+
+
+  .chart-bar {
+    @apply rounded-t-sm transition-all duration-300 cursor-pointer
+           bg-gradient-to-b from-[rgba(0,255,136,0.8)] to-[rgba(0,255,136,0.2)]
+           hover:from-accent-green hover:to-[rgba(0,255,136,0.4)];
+  }
+
+
+  .page-section {
+    @apply p-9 animate-slide-up;
+  }
+
+
+  .page-title {
+    @apply font-display text-3xl font-extrabold text-text-primary leading-tight;
+  }
+  .page-subtitle {
+    @apply text-sm text-text-secondary mt-1.5;
+  }
+}

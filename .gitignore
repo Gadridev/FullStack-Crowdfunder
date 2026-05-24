@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment (secrets — never commit)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / editor (optional — keeps repo clean)
+.vscode/
+.idea/
+*.swp
+
+# Vite
+frontend/dist/
+
+# Test / coverage (if you add tests later)
+coverage/
